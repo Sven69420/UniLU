@@ -1,0 +1,41 @@
+/* 
+Style for all heading elements (h1, h2, h3, h4, h5, h6) 
+(Blue dashed bottom border of 2px)
+*/
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 2px dashed #0000ff;
+}
+
+/*
+Style for hyperlinks to secure URLs (https)
+(Link emoji before each url)
+*/
+a[href^="https://"]:before {
+    content: "\1F517 ";
+}
+
+/*
+Style for hyperlinks to non-secure URLs (http)
+(Warning emoji before each url)
+*/
+a[href^="http://"]:before {
+    content: "\26A0 ";
+}
+
+/*
+Style for hyperlinks for JPG(JPEG) or PNG files
+(Framed picture emoji before each image file)
+*/
+a[href$=".jpg"]:after,
+a[href$=".jpeg"]:after,
+a[href$=".png"]:after {
+    content: "\1F5BC";
+}
+
+/*
+Style for images with no ALT attribute
+(Red outline of 3px)
+*/
+img:not([alt]) {
+    outline: 3px solid #ff0000;
+}

@@ -1,0 +1,70 @@
+/* 
+Mobile Mode Styles
+These styles apply when the screen width is 480px or less.
+*/
+
+/* This media query applies styles for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+
+    /* Hides the 'aside' element in mobile mode */
+    aside {
+        display: none;
+    }
+
+    /* 
+    Ensures that each 'card' class element takes full width of the screen
+    and removes any floating property that might be set by other CSS. 
+    Additionally applies Flexbox to center the image inside ".card"
+    */
+    .card {
+        width: 100%;
+        float: none;
+        display: flex; /* Enables Flexbox */
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+    }
+
+    /* Targets images inside '.card' class elements */
+    .card img {
+        height: auto; /* Maintains the aspect ratio of the image */
+        max-width: 100%; /* Ensures the image does not exceed the container width */
+    }
+}
+
+/* 
+Tablet Mode Styles
+These styles apply for screen widths between 481px and 768px.
+*/
+
+/* This media query applies styles for screens with a width between 481px and 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Makes the 'aside' element visible and full width on tablets */
+    aside {
+        display: block;
+        width: 100%;
+    }
+
+    /* 
+    Ensures that each 'card' class element takes full width of the screen
+    on tablet devices and removes any floating property 
+    */
+    .card {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* 
+Dark Mode Styles
+These styles apply when the user has set their device or browser to dark mode.
+*/
+
+/* This media query applies styles when the user prefers a dark color scheme */
+@media (prefers-color-scheme: dark) {
+
+    /* Changes the background color of the body to black in dark mode */
+    body {
+        background-color: #000000;
+    }
+}

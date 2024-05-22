@@ -1,0 +1,67 @@
+/* This applies block-level display to all label elements, ensuring they stack vertically */
+label {
+    display: block;
+}
+
+/*
+This targets labels that immediately follow a checkbox input and resets them to inline display,
+so they appear next to their corresponding checkboxes rather than on a new line 
+*/
+input[type="checkbox"] + label {
+    display: inline;
+}
+
+/*
+This sets a fixed width of 500px to all text, email, number inputs, and textareas,
+making them uniformly wide across the form 
+*/
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input:not([type]), /* This targets input elements with no type attribute specified */
+textarea {
+    width: 500px;
+}
+
+/*
+Disabled form elements (input, textarea, button, etc.) are styled with a gray background
+to visually indicate their inactive state
+*/
+:disabled {
+    background-color: #808080;
+}
+
+/*
+When any form element is focused (clicked on or tabbed into), it gets a blue outline,
+which helps indicate the current active field to the user
+*/
+:focus {
+    outline: 2px solid #0000ff;
+}
+
+/*
+When a checkbox is checked, this changes the color of the immediately following label text to blue,
+providing a visual indication that the checkbox is active
+*/
+input[type="checkbox"]:checked + label {
+    color: #0000ff;
+}
+
+/*
+This pseudo-element is used to control the content after labels. 
+It's set to empty by default and will be used to add content for required fields
+*/
+label:after {
+    content: "*"; /* The asterisk indicates a required field */
+    color: #ff0000;
+}
+
+/*
+This targets labels that immediately follow inputs or textareas that are required.
+It uses the :after pseudo-element to add a red asterisk after the label text,
+indicating that the field is mandatory 
+*/
+input:required + label:after,
+textarea:required + label:after {
+    content: "*"; /* The asterisk indicates a required field */
+}
